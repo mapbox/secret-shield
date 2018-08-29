@@ -1,0 +1,51 @@
+{
+  "name": "@mapbox/secret-shield",
+  "version": "1.0.1",
+  "description": "Search for secrets in the specified github repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.test.js | tap-diff",
+    "lint": "eslint -c .eslintrc.js *.js **/*.js"
+  },
+  "bin": {
+    "secret-shield": "bin/secret-shield.js"
+  },
+  "author": "Mapbox",
+  "license": "ISC",
+  "dependencies": {
+    "acorn": "^5.5.3",
+    "command-join": "^2.0.0",
+    "command-line-args": "^5.0.2",
+    "d3-queue": "^3.0.7",
+    "decrypt-kms-env": "^3.0.0",
+    "es6-promise": "^4.2.4",
+    "esprima": "^4.0.0",
+    "fast-fuzzy": "^1.5.0",
+    "find-in-files": "^0.5.0",
+    "git-clone": "^0.1.0",
+    "lodash": "^4.17.10",
+    "md5": "^2.2.1",
+    "p-queue": "^2.4.2",
+    "proxyquire": "^2.0.1",
+    "rewire": "^3.0.2",
+    "rimraf": "^2.6.2",
+    "semver": "^5.5.0",
+    "shelljs": "^0.8.1",
+    "simple-statistics": "^5.4.0",
+    "tty-table": "^2.6.2",
+    "uuid": "^3.2.1",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "@mapbox/cloudfriend": "^1.9.0",
+    "@mapbox/dyno": "^1.4.1",
+    "@mapbox/watchbot": "^4.0.0",
+    "@octokit/rest": "^15.2.7",
+    "aws-sdk": "^2.230.1",
+    "eslint": "^4.17.0",
+    "got": "^8.3.1",
+    "sinon": "^6.0.0",
+    "tap-diff": "^0.1.1",
+    "tape": "^4.8.0"
+  }
+}

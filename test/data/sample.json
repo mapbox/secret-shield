@@ -1,0 +1,8 @@
+{
+  "license": "Some license",
+  "name": "some repository",
+  "version": {
+    "node": "cde",
+    "node2": "cde"
+  }
+}

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+LOCALHOOKS=$(git rev-parse --show-toplevel 2>/dev/null | sed -e "s/\$/\/.git\/hooks\/pre-commit/")
+
+if [ -z "$NVM_DIR" ]; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+fi
+
+if [ ! -z "$LOCALHOOKS" ] && [ -x "$LOCALHOOKS" ]; then
+    exec "$LOCALHOOKS"
+    exit
+fi
+
+command -v secret-shield >/dev/null 2>&1 || {
+    echo >&2 "WARNING! Could not check for secrets because the secret-shield package is either not installed or misconfigured (command not found)."
+    exit 0
+}
+
+secret-shield --pre-commit

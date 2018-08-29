@@ -1,0 +1,59 @@
+{
+  "license": "Some license",
+  "name": "some repository",
+  "version": {
+    "node": "cde"
+  },
+  "list": ["a", "b", "c"],
+  "boolean": true,
+  "tree": {
+    "key1": "value",
+    "key2": [
+      {
+        "key1": "x",
+        "key2": "y",
+        "key3": ["p", "q", "r"],
+        "key4": [["i", "j", "k"], "w"]
+      },
+      "d",
+      "e",
+      {
+        "anotherkey": "wat",
+        "key": {
+          "key": [
+            [10, 11, 12],
+            20,
+            30,
+            {
+              "first": "first",
+              "second": "second",
+              "third": [
+                "w1",
+                "w2",
+                "w3",
+                {
+                  "val1": "z1",
+                  "val2": "z3",
+                  "val3": {
+                    "val4": "pk",
+                    "val5": "pk2",
+                    "val6": [
+                      ["sa", "sb", "sc"],
+                      "s2",
+                      "s3"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "key3": {
+      "sample": "31",
+      "sample2": "32"
+    }
+  },
+  "key": {}
+}
