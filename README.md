@@ -28,7 +28,7 @@
 <a id="%F0%9F%9A%A8-are-you-being-blocked-from-committing-%F0%9F%9A%A8"></a>
 ## 🚨 Are you being blocked from committing? 🚨
 
-Some repositories [require secret-shield](./docs/partnerBadge.md) to commit to them. If you don't have secret-shield you'll be blocked from committing to those repos
+Some repositories [require secret-shield](./docs/enabledBadge.md) to commit to them. If you don't have secret-shield you'll be blocked from committing to those repos
 
 If secret-shield is installed on your machine, [read this](https://github.com/mapbox/secret-shield/blob/master/docs/commonIssues.md) for common issues with secret-shield and how to fix them.
 
@@ -39,7 +39,7 @@ If secret-shield is installed on your machine, [read this](https://github.com/ma
 
 ![Secret-shield in action](https://github.com/mapbox/secret-shield/raw/assets/shield.gif)
 
-**Please note:** secret-shield will now be required when working with certain repositories. [Learn more](./docs/partnerBadge.md).
+**Please note:** secret-shield will now be required when working with certain repositories. [Learn more](./docs/enabledBadge.md).
 
 **If you want to add secret-shield to your repository**, [take a look here](./docs/enabledRepositories.md).
 
