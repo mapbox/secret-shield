@@ -1,6 +1,6 @@
 {
   "name": "@mapbox/secret-shield",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Search for secrets in the specified github repo",
   "main": "index.js",
   "scripts": {
