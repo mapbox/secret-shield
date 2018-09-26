@@ -1,10 +1,12 @@
 #!/bin/sh
 
-if [ -z "$NVM_DIR" ]; then
+# Try enabling NVM if we can't find secret-shield.
+if [ ! command -v secret-shield >/dev/null 2>&1 ] && [ -z "$NVM_DIR" ]; then
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 fi
 
+# Fail gracefully even if we couldn't find secret-shield in the NVM installation.
 command -v secret-shield >/dev/null 2>&1 || {
     echo >&2 "WARNING! Could not check for secrets because the secret-shield package is either not installed or misconfigured (command not found)."
     exit 0
