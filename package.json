@@ -30,7 +30,7 @@
     "rewire": "^3.0.2",
     "rimraf": "^2.6.2",
     "semver": "^5.5.0",
-    "shelljs": "^0.8.1",
+    "shelljs": "^0.8.3",
     "simple-statistics": "^5.4.0",
     "tty-table": "^2.6.2",
     "uuid": "^3.2.1",
