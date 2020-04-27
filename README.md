@@ -49,7 +49,7 @@ If secret-shield is installed on your machine, [read this](https://github.com/ma
 <a id="requirements"></a>
 ## Requirements
 
-`secret-shield` is a Node project [tested with Node 4, 6, and 8](https://github.com/mapbox/secret-shield/blob/master/.travis.yml)
+`secret-shield` is a Node project [tested with Node 10 & 12](https://github.com/mapbox/secret-shield/blob/master/.travis.yml)
 
 `secret-shield` requires `npm >= 6` to install globally. Previous versions of npm will not correcly install the required dependencies.
 
