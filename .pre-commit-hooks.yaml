@@ -2,3 +2,4 @@
   name: Mapbox Secret Shield
   entry: secret-shield
   language: node
+  pass_filenames: false
