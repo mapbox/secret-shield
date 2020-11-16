@@ -1,0 +1,4 @@
+- id: secret-shield
+  name: Mapbox Secret Shield
+  entry: secret-shield
+  language: node
