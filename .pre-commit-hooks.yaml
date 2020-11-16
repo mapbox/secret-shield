@@ -1,5 +1,4 @@
 - id: secret-shield
   name: Mapbox Secret Shield
-  entry: secret-shield
+  entry: 'secret-shield --files'
   language: node
-  pass_filenames: false
