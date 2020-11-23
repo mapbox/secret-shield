@@ -1,0 +1,5 @@
+- id: secret-shield
+  name: Mapbox Secret Shield
+  entry: 'secret-shield --pre-commit'
+  language: node
+  pass_filenames: false
