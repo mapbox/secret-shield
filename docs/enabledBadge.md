@@ -16,7 +16,7 @@ secret-shield --add-hooks global
 Follow these steps:
 1. Install secret-shield as described above, then try again.
 2. If that doesn't work, follow the errors that appear on-screen.
-3. If that doesn't work, [take a look here for common issues](https://github.com/mapbox/secret-shield/blob/master/docs/commonIssues.md).
+3. If that doesn't work, [take a look here for common issues](https://github.com/mapbox/secret-shield/blob/main/docs/commonIssues.md).
 4. If that doesn't work and you need to commit right now, run `git commit` with the `--no-verify` flag to skip all checks, including the check for secrets.
 5. If you need further help or want to report a bug, [open a ticket in secret-shield](https://github.com/mapbox/secret-shield/issues/new).
 6. If you need more immediate help, message us in the #secret-shield slack channel.
