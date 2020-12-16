@@ -1,4 +1,4 @@
-# secret-shield [![Build Status](https://travis-ci.com/mapbox/secret-shield.svg?token=xWoUHsqdcvsQdxzwqjXH&branch=master)](https://travis-ci.com/mapbox/secret-shield)
+# secret-shield [![Build Status](https://travis-ci.com/mapbox/secret-shield.svg?token=xWoUHsqdcvsQdxzwqjXH&branch=main)](https://travis-ci.com/mapbox/secret-shield)
 
 <!-- MarkdownTOC -->
 
@@ -30,7 +30,7 @@
 
 Some repositories [require secret-shield](./docs/enabledBadge.md) to commit to them. If you don't have secret-shield you'll be blocked from committing to those repos
 
-If secret-shield is installed on your machine, [read this](https://github.com/mapbox/secret-shield/blob/master/docs/commonIssues.md) for common issues with secret-shield and how to fix them.
+If secret-shield is installed on your machine, [read this](https://github.com/mapbox/secret-shield/blob/main/docs/commonIssues.md) for common issues with secret-shield and how to fix them.
 
 <a id="about-secret-shield"></a>
 ## About secret-shield
@@ -49,7 +49,7 @@ If secret-shield is installed on your machine, [read this](https://github.com/ma
 <a id="requirements"></a>
 ## Requirements
 
-`secret-shield` is a Node project [tested with Node 10 & 12](https://github.com/mapbox/secret-shield/blob/master/.travis.yml)
+`secret-shield` is a Node project [tested with Node 10 & 12](https://github.com/mapbox/secret-shield/blob/main/.travis.yml)
 
 `secret-shield` requires `npm >= 6` to install globally. Previous versions of npm will not correcly install the required dependencies.
 
@@ -138,7 +138,7 @@ Security researchers can use secret-shield to find and report leaked secrets to 
 
 By default, secret-shield performs a minimal search: AWS client IDs, Mapbox secure keys, Slack tokens, and GitHub tokens.
 
-If you [perform more advanced searches](https://github.com/mapbox/secret-shield/blob/master/docs/ruleManipulation.md#alternate-ruleset), secret-shield can look for more things, such as AWS secret IDs, “don’t commit” messages, and high-entropy strings.
+If you [perform more advanced searches](https://github.com/mapbox/secret-shield/blob/main/docs/ruleManipulation.md#alternate-ruleset), secret-shield can look for more things, such as AWS secret IDs, “don’t commit” messages, and high-entropy strings.
 
 <a id="it-says-it-found-a-secret-but-it%E2%80%99s-not-what-do-i-do"></a>
 ## It says it found a secret but it’s not, what do I do?
@@ -162,7 +162,7 @@ Secret-shield uses pre-commit hooks; some clients support them, others just forc
 <a id="i-already-have-pre-commit-hooks-for-something-else-will-secret-shield-work-with-them"></a>
 ## I already have pre-commit hooks for something else, will secret-shield work with them?
 
-Yes! Secret-shield will automatically detect any local hooks that you have, e.g. husky, and run them instead. If you want to run secret-shield on that repository, you should add it to those local hooks. [Take a look here.](https://github.com/mapbox/secret-shield/blob/master/docs/enabledRepositories.md)
+Yes! Secret-shield will automatically detect any local hooks that you have, e.g. husky, and run them instead. If you want to run secret-shield on that repository, you should add it to those local hooks. [Take a look here.](https://github.com/mapbox/secret-shield/blob/main/docs/enabledRepositories.md)
 
 <a id="husky--lint-staged-integration"></a>
 ### Husky + lint-staged integration

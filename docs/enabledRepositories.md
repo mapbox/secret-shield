@@ -1,4 +1,4 @@
-# Becoming a [![Secret-shield enabled](https://github.com/mapbox/secret-shield/blob/assets/secret-shield-enabled-badge.svg)](https://github.com/mapbox/secret-shield/blob/master/docs/enabledBadge.md) repository
+# Becoming a [![Secret-shield enabled](https://github.com/mapbox/secret-shield/blob/assets/secret-shield-enabled-badge.svg)](https://github.com/mapbox/secret-shield/blob/main/docs/enabledBadge.md) repository
 
 By simply adding one command to your repository's hooks manager as a pre-commit hook, secret-shield will automatically protect not only your repository, but every repository present in every computer that commits to your repository. This way, by partnering only with a few repositories, a team or organization can get secret-shield installed on most of their computers.
 
@@ -8,7 +8,7 @@ This is meant to be as a set-it-and-forget-it. You will not need to commit or ma
 
 1. Add secret-shield to your hooks manager (e.g. husky) alongside your other hooks: `secret-shield --check-and-run 2018-08-01 && myOtherHooks`, setting the date to your [desired grace period](#what-is-the-grace-period).
 4. Install secret-shield as an npm dependency in `package.json`. This is only needed for the command above and is not the actual secret-shield that will be run.
-5. Add the cool badge to your repository! Simply put `[![Secret-shield enabled](https://github.com/mapbox/secret-shield/blob/assets/secret-shield-enabled-badge.svg)](https://github.com/mapbox/secret-shield/blob/master/docs/enabledBadge.md)` at the top of your readme.
+5. Add the cool badge to your repository! Simply put `[![Secret-shield enabled](https://github.com/mapbox/secret-shield/blob/assets/secret-shield-enabled-badge.svg)](https://github.com/mapbox/secret-shield/blob/main/docs/enabledBadge.md)` at the top of your readme.
 
 ## FAQ
 

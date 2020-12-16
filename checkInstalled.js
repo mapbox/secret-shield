@@ -65,10 +65,10 @@ function checkInstalled(stopWorkingDate, path) {
     // There is no secret-shield
     if (new Date() > Date.parse(stopWorkingDate)) {
       // Grace period expired
-      console.error('ERROR! You must have secret-shield installed and configured globally to commit to this repository. To set up secret-shield, follow these instructions: https://github.com/mapbox/secret-shield/blob/master/docs/enabledBadge.md');
+      console.error('ERROR! You must have secret-shield installed and configured globally to commit to this repository. To set up secret-shield, follow these instructions: https://github.com/mapbox/secret-shield/blob/main/docs/enabledBadge.md');
       return 10;
     } else {
-      console.warn(`WARNING! You must have secret-shield installed and configured globally to commit to this repository. Committing will stop working on ${stopWorkingDate} if you don't globally install and configure secret-shield as detailed in the docs: https://github.com/mapbox/secret-shield/blob/master/docs/enabledBadge.md`);
+      console.warn(`WARNING! You must have secret-shield installed and configured globally to commit to this repository. Committing will stop working on ${stopWorkingDate} if you don't globally install and configure secret-shield as detailed in the docs: https://github.com/mapbox/secret-shield/blob/main/docs/enabledBadge.md`);
       return 255;
     }
   }
@@ -80,7 +80,7 @@ function checkInstalled(stopWorkingDate, path) {
       return 11;
     }
   } catch (e) {
-    console.error('ERROR! Secret-shield is installed but not working properly. Please run "npm install -g @mapbox/secret-shield@latest" to resolve this issue. If the issue persists, see https://github.com/mapbox/secret-shield/blob/master/docs/commonIssues.md');
+    console.error('ERROR! Secret-shield is installed but not working properly. Please run "npm install -g @mapbox/secret-shield@latest" to resolve this issue. If the issue persists, see https://github.com/mapbox/secret-shield/blob/main/docs/commonIssues.md');
     return 12;
   }
 
@@ -102,7 +102,7 @@ function checkVersionAndUpdate(path) {
       console.warn('WARNING! Could not update secret-shield to the latest version.');
       return -1;
     } else if (e.status === 112) {
-      console.error('ERROR! Could not point git hooks to new location. Run "secret-shield --add-hooks global", try again, and if you are still encountering issues, check out the documentation at https://github.com/mapbox/secret-shield/blob/master/docs/commonIssues.md for help.');
+      console.error('ERROR! Could not point git hooks to new location. Run "secret-shield --add-hooks global", try again, and if you are still encountering issues, check out the documentation at https://github.com/mapbox/secret-shield/blob/main/docs/commonIssues.md for help.');
       return 112;
     } else {
       console.warn('WARNING! Could not check secret-shield for updates due to an unknown error.');
@@ -138,7 +138,7 @@ function checkHooksGlobal(path) {
     try {
       fs.accessSync(hooksFile, (fs.constants || fs).X_OK);
     } catch (er) {
-      console.error(`ERROR! Your global pre-commit hooks located in ${hooksFile} are not executable. In order to commit to this repository, you must have global pre-commit hooks installed and configured to run secret-shield. To fix this issue, run chmod +x ${hooksFile} More info here: https://github.com/mapbox/secret-shield/blob/master/docs/enabledBadge.md`);
+      console.error(`ERROR! Your global pre-commit hooks located in ${hooksFile} are not executable. In order to commit to this repository, you must have global pre-commit hooks installed and configured to run secret-shield. To fix this issue, run chmod +x ${hooksFile} More info here: https://github.com/mapbox/secret-shield/blob/main/docs/enabledBadge.md`);
       return 21;
     }
   } else {
@@ -164,7 +164,7 @@ function checkHooksGlobal(path) {
   try {
     cp.execSync(`grep "secret-shield --pre-commit" ${hooksFile} >/dev/null 2>&1`);
   } catch (e) {
-    console.error(`ERROR! Your global pre-commit hooks located in ${hooksFile} are not configured to run secret-shield. In order to commit to this repository, your global pre-commit hooks must be configured to run secret-shield. More info here: https://github.com/mapbox/secret-shield/blob/master/docs/enabledBadge.md`);
+    console.error(`ERROR! Your global pre-commit hooks located in ${hooksFile} are not configured to run secret-shield. In order to commit to this repository, your global pre-commit hooks must be configured to run secret-shield. More info here: https://github.com/mapbox/secret-shield/blob/main/docs/enabledBadge.md`);
     return 24;
   }
   return 0;
