@@ -88,7 +88,7 @@ Follow these steps:
 This means that the `secret-shield` command is available in your terminal, but running it causes errors. Running `npm install -g @mapbox/secret-shield@latest` should resolve this issue. Make sure that your secret-shield installation is at `1.0.0-alpha.1` or above.
 
 If that didn't work, and when you installed secret-shield, you manually cloned the secret-shield github repository and ran `npm link`, try:
- * `git pull` in the directory (and `git checkout master` if you're not in the master branch)
+ * `git pull` in the directory (and `git checkout main` if you're not in the main branch)
  * `npm install`
  * `npm link`
 
