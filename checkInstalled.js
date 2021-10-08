@@ -25,7 +25,7 @@ function checkAndRun(stopWorkingDate) {
   try {
     // This is the trick of the whole operation. We're running the global secret-shield, not the one
     // that was included with 'require'
-    cp.execSync(`PATH=${path} secret-shield --pre-commit -C precommit`);
+    cp.execSync(`PATH="${path}" secret-shield --pre-commit -C precommit`);
     return 0;
   } catch (e) {
     return 1;
