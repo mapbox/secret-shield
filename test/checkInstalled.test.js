@@ -66,17 +66,6 @@ tape('checkInstalled version ok', (t) => {
   t.end();
 });
 
-tape('checkInstalled version ok, path with spaces', (t) => {
-  const execStub = sinon.stub(cp, 'execSync');
-  execStub.onFirstCall().returns('bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin');
-  execStub.onSecondCall().returns('{"version": "1.0.0-beta"}');
-
-  t.equal(checkInstalled.checkInstalled('', '/bin:/usr/bin'), -1);
-
-  execStub.restore();
-  t.end();
-});
-
 tape('checkInstalled version ok grace period', (t) => {
   const execStub = sinon.stub(cp, 'execSync');
   execStub.onFirstCall().returns();
