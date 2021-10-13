@@ -10,7 +10,7 @@ const minVersion = '1.0.0-alpha.1';
 // In this file you will see a lot of
 
 function checkAndRun(stopWorkingDate) {
-  let path = cp.execSync('echo $PATH').toString().trim();
+  let path = cp.execSync('echo "$PATH"').toString().trim();
   path = path.replace(/[^:]+\/\.bin[^:]*(:|$)/g, ''); // if it's in a .bin, it's not global.
 
   if (typeof stopWorkingDate === 'undefined') {
@@ -60,7 +60,7 @@ function checkSecretShield(stopWorkingDate, path) {
 
 function checkInstalled(stopWorkingDate, path) {
   try {
-    cp.execSync(`PATH=${path} command -v secret-shield`);
+    cp.execSync(`PATH="${path}" command -v secret-shield`);
   } catch (e) {
     // There is no secret-shield
     if (new Date() > Date.parse(stopWorkingDate)) {
@@ -74,7 +74,7 @@ function checkInstalled(stopWorkingDate, path) {
   }
 
   try {
-    let currentVersion = JSON.parse(cp.execSync(`PATH=${path} secret-shield --info`)).version.trim();
+    let currentVersion = JSON.parse(cp.execSync(`PATH="${path}" secret-shield --info`)).version.trim();
     if (semver.lt(currentVersion, minVersion)) {
       console.error(`ERROR! You need secret-shield ${minVersion} or above. Your current version is ${currentVersion}. Run "npm install -g @mapbox/secret-shield@latest" to resolve this issue.`);
       return 11;
@@ -93,7 +93,7 @@ function checkVersionAndUpdate(path) {
   }
   try {
     console.log('Checking for secret-shield updates...');
-    cp.execSync(`PATH=${path} secret-shield --update >/dev/null 2>&1`);
+    cp.execSync(`PATH="${path}" secret-shield --update >/dev/null 2>&1`);
   } catch (e) {
     if (e.status === 110) {
       console.warn('WARNING! Could not check secret-shield for updates.');
@@ -124,7 +124,7 @@ function checkHooksGlobal(path) {
   } catch (e) {
     // There are no global hooks
     try {
-      cp.execSync(`PATH=${path} secret-shield --add-hooks global >/dev/null 2>&1`);
+      cp.execSync(`PATH="${path}" secret-shield --add-hooks global >/dev/null 2>&1`);
       return 0;
     } catch(er) {
       console.error('ERROR! Failed to create secret-shield hooks');
@@ -144,7 +144,7 @@ function checkHooksGlobal(path) {
   } else {
     // Copy the pre-commit hook in the proper location
     try {
-      let dirname = JSON.parse(cp.execSync(`PATH=${path} secret-shield --info`)).installed_dir.trim();
+      let dirname = JSON.parse(cp.execSync(`PATH="${path}" secret-shield --info`)).installed_dir.trim();
       dirname = __dirname.slice(-1) === '/' ? __dirname : __dirname + '/';
       cp.execSync(commandJoin(['cp', '-f', dirname + '../config/hooks/pre-commit', hooksFile]) + ' >/dev/null 2>&1');
     } catch (e) {
