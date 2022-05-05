@@ -210,7 +210,7 @@ let secretShieldTemplate = {
           S3Key: cf.join('', ['bundles/secret-shield/', cf.ref('GitSha'), '.zip'])
         },
         Handler: 'lambda/index.handler',
-        Runtime: 'nodejs8.10',
+        Runtime: 'nodejs14.x',
         Timeout: 240,
         MemorySize: 128,
         Environment: {

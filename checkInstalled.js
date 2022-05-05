@@ -2,7 +2,7 @@
 
 const cp = require('child_process');
 const fs = require('fs');
-const commandJoin = require('command-join');
+const { commandJoin } = require('command-join');
 const semver = require('semver');
 
 const minVersion = '1.0.0-alpha.1';

@@ -168,8 +168,8 @@ tape('Search should not work across newlines', (t) => {
 
   searchString('dacc test f\noo bar', {rules: testRules}).then((results) => {
     t.equal(results.length, 0, 'should not match anything');
+    t.end();
   });
-  t.end();
 });
 
 tape('Search should work', (t) => {
@@ -186,9 +186,9 @@ tape('Search should work', (t) => {
 
   searchString('dacc test foob@r', {rules: testRules}).then((results) => {
     t.equal(results.length, 2, 'should match two patterns');
+    t.end();
   });
 
-  t.end();
 });
 
 
@@ -225,9 +225,9 @@ tape('Should be case-sensitive', (t) => {
 
   searchString('Foo bar baz', {rules: testRules}).then((results) => {
     t.equal(results.length, 0, 'should not match any patterns');
+    t.end();
   });
 
-  t.end();
 });
 
 tape('Should respect entropy thresholds', (t) => {
@@ -247,9 +247,9 @@ tape('Should respect entropy thresholds', (t) => {
   searchString('tricksyelfABCACBACAC', {rules: testRules}).then((results) => {
     t.equal(results.length, 1, 'should match one');
     t.deepEqual(results, ['should match'], 'should match the correct one');
+    t.end();
   });
 
-  t.end();
 });
 
 // tape('Fuzzy matching should work', (t) => {
