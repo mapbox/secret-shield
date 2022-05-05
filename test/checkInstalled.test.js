@@ -6,7 +6,7 @@ const sinon = require('sinon');
 const fs = require('fs');
 const cp = require('child_process');
 const os = require('os');
-const commandJoin = require('command-join');
+const { commandJoin } = require('command-join');
 
 const checkInstalled = require('../checkInstalled');
 

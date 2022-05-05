@@ -1,4 +1,4 @@
-FROM node:9
+FROM node:14-alpine
 
 ARG NPMAccessToken
 
