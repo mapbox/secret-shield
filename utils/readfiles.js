@@ -23,7 +23,7 @@ function buildFilter(filters) {
         return '[^\\/]*';
       })
       .replace(/\?/g, '[^\\/]?')
-      .replace(/\*\*/g, '\.*')
+      .replace(/\*\*/g, '.*')
       .replace(/([\-\+\|])/g, '\\$1')
     );
   }
