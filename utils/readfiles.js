@@ -13,21 +13,24 @@ function buildFilter(filters) {
 
   if (filters.length === 0) return null;
 
-  while(filters.length > 0) {
+  while (filters.length > 0) {
     var filter = filters.shift();
-    filterArray.push('\\/?' + filter.replace(/\./g, '\\.')
-      .replace(/(\*?)(\*)(?!\*)/g, function(match, prefix) {
-        if(prefix == '*') {
-          return match;
-        }
-        return '[^\\/]*';
-      })
-      .replace(/\?/g, '[^\\/]?')
-      .replace(/\*\*/g, '\.*')
-      .replace(/([\-\+\|])/g, '\\$1')
+    filterArray.push(
+      `\\/?${filter
+        .replace(/\./g, '\\.')
+        .replace(/([./\\])/g, '\\$1')
+        .replace(/(\*?)(\*)(?!\*)/g, (match, prefix) => {
+          if (prefix === '*') {
+            return match;
+          }
+          return '[^\\/]*';
+        })
+        .replace(/\?/g, '[^\\/]?')
+        .replace(/\*\*/g, '.*')
+        .replace(/([\-\+\|])/g, '\\$1')}`,
     );
   }
-  return new RegExp('^' + filterArray.join('|') + '$', 'i');
+  return new RegExp(`^${filterArray.join('|')}$`, 'i');
 }
 
 function isExcludeFilename(filename, excludeFileRegexs) {
@@ -46,7 +49,7 @@ function readfiles(dir, options, callback) {
     options = {};
   }
   options = options || {};
-  callback = typeof callback === 'function' ? callback : function () {};
+  callback = typeof callback === 'function' ? callback : function () { };
 
   return new Promise(function (resolve, reject) {
 
@@ -135,7 +138,7 @@ function readfiles(dir, options, callback) {
               var outputName = relFilename;
               if (options.filenameFormat === readfiles.FULL_PATH) {
                 outputName = fullpath;
-              }else if (options.filenameFormat === readfiles.FILENAME) {
+              } else if (options.filenameFormat === readfiles.FILENAME) {
                 outputName = filename;
               }
               files.push(outputName);
