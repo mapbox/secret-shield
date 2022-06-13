@@ -15,6 +15,7 @@ function buildFilter(filters) {
 
   while (filters.length > 0) {
     var filter = filters.shift();
+
     filterArray.push(
       `\\/?${filter
         .replace(/\./g, '\\.')
