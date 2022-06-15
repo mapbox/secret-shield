@@ -7,18 +7,16 @@ var fs = require('fs');
 var path = require('path');
 var Promise = require('es6-promise').Promise;
 
-function buildFilter(filters) {
-  var filters = (filters instanceof Array) ? filters.slice() : [filters];
-  var filterArray = [];
+function buildFilter(filtersParam) {
+  const filters = (filtersParam instanceof Array) ? filtersParam.slice() : [filtersParam];
+  const filterArray = [];
 
   if (filters.length === 0) return null;
 
   while (filters.length > 0) {
-    var filter = filters.shift();
-
+    const filter = filters.shift();
     filterArray.push(
       `\\/?${filter
-        .replace(/\./g, '\\.')
         .replace(/([./\\])/g, '\\$1')
         .replace(/(\*?)(\*)(?!\*)/g, (match, prefix) => {
           if (prefix === '*') {
