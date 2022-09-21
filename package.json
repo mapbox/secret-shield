@@ -4,7 +4,7 @@
   "description": "Search for secrets in the specified github repo",
   "main": "index.js",
   "scripts": {
-    "test": "tape test/*.test.js | tap-diff",
+    "test": "tape test/*.test.js | tap-spec",
     "lint": "eslint -c .eslintrc.js *.js **/*.js"
   },
   "engines": {
@@ -47,8 +47,8 @@
     "aws-sdk": "^2.1129.0",
     "eslint": "^8.14.0",
     "got": "^12.0.4",
-    "sinon": "^13.0.2",
-    "tap-diff": "^0.1.1",
+    "sinon": "14.0.0",
+    "tap-spec": "^5.0.0",
     "tape": "^5.5.3"
   }
 }
