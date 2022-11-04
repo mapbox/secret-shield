@@ -42,7 +42,7 @@
   "devDependencies": {
     "@mapbox/cloudfriend": "^5.1.1",
     "@mapbox/dyno": "^1.5.1",
-    "@mapbox/watchbot": "^8.0.0",
+    "@mapbox/watchbot": "^4.7.1",
     "@octokit/rest": "^18.12.0",
     "aws-sdk": "^2.1129.0",
     "eslint": "^8.14.0",
