@@ -1,3 +1,6 @@
+This project is no longer being actively maintained. We understand the value of this, and we encourage you to seek alternative solutions, such as [Gitleaks](https://github.com/gitleaks/gitleaks).
+
+
 # secret-shield [![Build Status](https://travis-ci.com/mapbox/secret-shield.svg?token=xWoUHsqdcvsQdxzwqjXH&branch=main)](https://travis-ci.com/mapbox/secret-shield)
 
 <!-- MarkdownTOC -->
